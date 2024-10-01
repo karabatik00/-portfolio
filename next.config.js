@@ -1,18 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // Remove the 'output: export' line to enable server-side rendering and API routes
   images: {
-    unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'i.scdn.co',
-        port: '',
-        pathname: '/image/**',
-      },
-    ],
+    domains: ['i.scdn.co'], // Use 'domains' instead of 'remotePatterns' for simplicity
+    // Remove 'unoptimized: true' to enable Vercel's image optimization
   },
-  trailingSlash: true,
+  // Remove 'trailingSlash: true' unless you specifically need it
 };
 
 module.exports = nextConfig;
